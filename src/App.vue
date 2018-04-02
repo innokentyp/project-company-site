@@ -2,17 +2,17 @@
   <div id="app">
     <app-header/>
 
-    <section class="uk-section">
-      <div class="uk-container">
-        <router-view/>
-      </div>
-    </section>
+    <router-view/>
 
-    <app-footer/>    
+    <app-footer/>
+
+    <a class="uk-button uk-button-primary uk-button-small" id="js-scroll-up" href="#top" uk-scroll :hidden="scrollUpHidden"><span uk-icon="icon: chevron-up; ratio: 1"></span></a>
   </div>
 </template>
 
 <script>
+  import UIkit from 'uikit'
+
   import Header from '@/components/Header.vue'
   import Footer from '@/components/Footer.vue'
 
@@ -20,7 +20,21 @@
     components: {
       'app-header': Header,
       'app-footer': Footer
-    }
+    },
+    data () {
+      return {
+        scrollUpHidden: true 
+      }
+    },
+    mounted () {
+      UIkit.scroll(document.getElementById('js-scroll-up'), { duration: 600 })
+
+      window.addEventListener('scroll', 
+        (e) => {
+          this.scrollUpHidden = window.pageYOffset < 200
+        }
+      )
+    } 
   }
 </script>
 
@@ -41,6 +55,17 @@
   @import "node_modules/uikit/src/scss/uikit-theme.scss";
 
   // }
+
+  #js-scroll-up {
+    position: fixed;
+
+    left: calc(100vw / 2 - 26px);
+    bottom: 8px;
+
+    z-index: 1000;
+
+    opacity: .75;
+  }
 
   /*
   #app {

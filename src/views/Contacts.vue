@@ -1,27 +1,32 @@
 <template>
   <div class="contacts">
-    <article class="uk-article">
-	    <h2 class="uk-article-title"><a class="uk-link-reset" href="">Контакты</a></h2>
+    <section class="uk-section uk-section-default">
+      <div class="uk-container">
+        <h3>Контакты</h3>
 
-	    <p class="uk-article-meta">Written by <a href="#">Super User</a> on 12 April 2012. Posted in <a href="#">Blog</a></p>
-	    <p class="uk-text-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-	    
-	    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div class="uk-grid-match uk-grid-small uk-child-width-1-2@m" uk-grid>
+          <div class="uk-width-1-3@m">
+            <div class="uk-background-muted">Item 1</div>
+            <div class="uk-background-default">Item 2</div>
+            <div class="uk-background-muted">Item 3</div>
+            <div class="uk-background-default">Item 4</div>
+          </div>
 
-	    <div class="uk-grid-small uk-child-width-auto" uk-grid>
-        <div>
-          <a class="uk-button uk-button-text" href="#">Read more</a>
+          <div class="uk-width-expand@m">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1125.6420400177833!2d37.53025109805131!3d55.64926779295093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54d39634542af%3A0x873290b769eeac29!2z0J_RgNC-0YTRgdC-0Y7Qt9C90LDRjyDRg9C7LiwgOTAsINCc0L7RgdC60LLQsCwgMTE3NDg1!5e0!3m2!1sru!2sru!4v1522665444172" width="100%" height="568" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </div>
         </div>
-        <div>
-          <a class="uk-button uk-button-text" href="#">5 Comments</a>
-        </div>
-    	</div>
-		</article>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
 	export default {
-
+    data () {
+      return {
+        key: 'AIzaSyDt2wcDf3FiQ5m21Kx5XBf40fh1w5j2PKY'
+      }
+    }
 	}
 </script>

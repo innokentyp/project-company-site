@@ -3,7 +3,7 @@
     <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
       <nav class="uk-navbar-container" uk-navbar>
         <div class="uk-navbar-left">
-          <a class="uk-navbar-item uk-logo" :href="locationOrigin"><span uk-icon="refresh"></span></a>          
+          <a class="uk-navbar-item uk-logo" :href="locationOrigin"><span uk-icon="happy"></span></a>          
 
           <ul class="uk-navbar-nav">
             <li :class="{ 'uk-active': $route.name == 'home' }"><router-link to="/">О нас</router-link></li>

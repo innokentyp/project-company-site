@@ -1,14 +1,10 @@
 <template>
-  <div class="home">
-  	<img src="../assets/logo.png">
-  	<HelloWorld msg="Welcome to Your Vue.js App"/>
-  	
-  	<div>
-  		<a href="" class="uk-icon-button uk-margin-small-right" uk-icon="twitter"></a>
-			<a href="" class="uk-icon-button  uk-margin-small-right" uk-icon="facebook"></a>
-			<a href="" class="uk-icon-button" uk-icon="google-plus"></a>
-  	</div>
-	</div>
+  <section class="uk-section">
+    <div class="uk-container">
+    	<img src="../assets/logo.png">
+  		<HelloWorld msg="Welcome to Your Vue.js App"/>    
+    </div>
+  </section>
 </template>
 
 <script>

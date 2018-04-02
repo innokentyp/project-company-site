@@ -6,6 +6,8 @@
         <div><span uk-icon="receiver"></span><a class="uk-link-reset" :href="`skype:${projectCompanyPhoneNumber}?call`">{{ projectCompanyPhone }}</a></div> 
       </address>
     </div>
+
+    
   </footer>
 </template>
 
@@ -13,6 +15,7 @@
   export default {
     data () {
       return {
+        copyrightYear: 2000,
         projectCompanyPhoneNumber: '+79067038001',
         projectCompanyEmail: 'innokentypolyakov@gmail.com'
       }
@@ -20,10 +23,10 @@
     computed: {
       projectCompanyPhone () {
         return `${this.projectCompanyPhoneNumber.slice(0, 2)} (${this.projectCompanyPhoneNumber.slice(2, 5)}) ${this.projectCompanyPhoneNumber.slice(5, 8)}-${this.projectCompanyPhoneNumber.slice(8, 10)}-${this.projectCompanyPhoneNumber.slice(10)}`        
-      },
-      copyrightYear () {
-        return new Date().getFullYear()
       }
+    },
+    created () {
+      this.copyrightYear = new Date().getFullYear()
     }
   }
 </script>
