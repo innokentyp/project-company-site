@@ -40,7 +40,7 @@ var router = new Router(
       },
       {
         path: '/contacts',
-        name: 'contats',
+        name: 'contacts',
         component: Contacts
      }
     ]    

@@ -2,8 +2,8 @@
   <footer class="uk-section uk-section-secondary">
     <div class="uk-container">
       <address class="uk-flex uk-flex-between uk-flex-middle uk-text-small">
-        <div>{{ copyrightYear }} &copy; Project Company / <a class="uk-link-reset" :href="`mailto:${projectCompanyEmail}`">Innokenty Polyakov</a></div>
-        <div><span uk-icon="receiver"></span><a class="uk-link-reset" :href="`skype:${projectCompanyPhoneNumber}?call`">{{ projectCompanyPhone }}</a></div> 
+        <div>{{ copyrightYear }} &copy; Project Company / <a class="uk-link-reset" :href="`mailto:${email}`">Innokenty Polyakov</a></div>
+        <div><span uk-icon="receiver"></span><a class="uk-link-reset" :href="`tel:${phoneNumber}`">{{ formatPhoneNumber(phoneNumber) }}</a></div> 
       </address>
     </div>
 
@@ -12,21 +12,16 @@
 </template>
 
 <script>
+  import { mapState } from 'vuex'
+
   export default {
-    data () {
-      return {
-        copyrightYear: 2000,
-        projectCompanyPhoneNumber: '+79067038001',
-        projectCompanyEmail: 'innokentypolyakov@gmail.com'
-      }
-    },
     computed: {
-      projectCompanyPhone () {
-        return `${this.projectCompanyPhoneNumber.slice(0, 2)} (${this.projectCompanyPhoneNumber.slice(2, 5)}) ${this.projectCompanyPhoneNumber.slice(5, 8)}-${this.projectCompanyPhoneNumber.slice(8, 10)}-${this.projectCompanyPhoneNumber.slice(10)}`        
-      }
+      ...mapState([ 'copyrightYear', 'phoneNumber', 'email' ])
     },
-    created () {
-      this.copyrightYear = new Date().getFullYear()
+    methods: {
+      formatPhoneNumber (phoneNumber) {
+        return `${phoneNumber.slice(0, 2)} (${phoneNumber.slice(2, 5)}) ${phoneNumber.slice(5, 8)}-${phoneNumber.slice(8, 10)}-${phoneNumber.slice(10)}`        
+      }
     }
   }
 </script>
