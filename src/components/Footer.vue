@@ -1,13 +1,11 @@
 <template>
-  <footer class="uk-section uk-section-secondary">
+  <footer class="uk-section uk-section-secondary uk-padding-small">
     <div class="uk-container">
-      <address class="uk-flex uk-flex-between uk-flex-middle uk-text-small">
-        <div>{{ copyrightYear }} &copy; Project Company / <a class="uk-link-reset" :href="`mailto:${email}`">Innokenty Polyakov</a></div>
+      <address class="uk-flex uk-flex-between uk-flex-middle uk-flex-wrap uk-text-small">
+        <div>{{ copyrightYear }} &copy; Project Company</div>
         <div><span uk-icon="receiver"></span><a class="uk-link-reset" :href="`tel:${phoneNumber}`">{{ formatPhoneNumber(phoneNumber) }}</a></div> 
       </address>
     </div>
-
-    
   </footer>
 </template>
 
@@ -27,12 +25,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "node_modules/uikit/src/scss/variables-theme.scss";
-
-  .uk-section {
-    padding-top: 35px;
-    padding-bottom: 35px;
-  }
+  @import "node_modules/uikit/src/scss/variables.scss";
 
   .uk-link-reset {
     &:hover {

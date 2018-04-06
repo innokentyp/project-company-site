@@ -1,7 +1,7 @@
 <template>
   <div class="uk-section uk-section-default">
     <div class="uk-container">
-      <h3>Решения</h3>
+      <h2>Решения</h2>
 
       <div class="uk-grid-match uk-child-width-1-3@m" uk-grid>
         <div>

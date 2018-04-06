@@ -10,7 +10,7 @@ export default new Vuex.Store(
       address: '117485, Москва, Профсоюзная ул., 90',
       phoneNumber: '+79067038001',
       email: 'innokentypolyakov@gmail.com',
-      website: 'https://www.projectcompany.ru'
+      skype: 'project.company'
 	  },
 	  mutations: {
 

@@ -4,7 +4,10 @@
 
     <router-view/>
 
+    <app-feedback/>
     <app-footer/>
+
+    <app-backcall/>
 
     <a class="uk-button uk-button-primary uk-button-small" id="js-scroll-up" href="#top" uk-scroll :hidden="scrollUpHidden"><span uk-icon="icon: chevron-up; ratio: 1"></span></a>
   </div>
@@ -14,26 +17,50 @@
   import UIkit from 'uikit'
 
   import Header from '@/components/Header.vue'
+  import Feedback from '@/components/Feedback.vue'
   import Footer from '@/components/Footer.vue'
+  import Backcall from '@/components/Backcall.vue'
 
   export default {
     components: {
       'app-header': Header,
-      'app-footer': Footer
+      'app-feedback': Feedback,
+      'app-footer': Footer,
+      'app-backcall': Backcall
     },
     data () {
       return {
         scrollUpHidden: true 
       }
     },
-    mounted () {
-      UIkit.scroll(document.getElementById('js-scroll-up'), { duration: 600 })
-
+    created () {
+      // Scroll Up Button
       window.addEventListener('scroll', 
         (e) => {
           this.scrollUpHidden = window.pageYOffset < 200
         }
+      );
+
+      // Contacts
+      ['resize', 'contactsMounted'].map(
+        (event) => {
+          window.addEventListener(
+            event, 
+            (e) => {
+              var element = document.getElementById('js-map-place')
+
+              if (element) {
+                element.style.width = window.innerWidth >= 960 ? (document.documentElement.clientWidth - element.getBoundingClientRect().left) + 'px' : ''
+
+              }
+            }
+          )          
+        }
       )
+    },
+    mounted () {
+      // Scroll Up Button
+      UIkit.scroll(document.getElementById('js-scroll-up'), { duration: 600 })
     } 
   }
 </script>
@@ -45,14 +72,14 @@
   // $global-link-color: orange;
 
   // 2. Import default variables and available mixins.
-  @import "node_modules/uikit/src/scss/variables-theme.scss";
-  @import "node_modules/uikit/src/scss/mixins-theme.scss";
+  @import "node_modules/uikit/src/scss/variables.scss";
+  @import "node_modules/uikit/src/scss/mixins.scss";
 
   // 3. Your custom mixin overwrites.
   // @mixin hook-card() { color: lime; }
 
   // 4. Import UIkit.
-  @import "node_modules/uikit/src/scss/uikit-theme.scss";
+  @import "node_modules/uikit/src/scss/uikit.scss";
 
   // }
 
