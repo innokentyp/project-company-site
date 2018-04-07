@@ -9,7 +9,7 @@
             <h3 class="uk-card-title uk-margin-remove-bottom">Адрес</h3>
             <p class="uk-margin-remove-top uk-margin-remove-bottom">
               <span class="uk-text-danger" uk-icon="location"></span>&nbsp;
-              <span>{{ address }}</span>
+              <a class="uk-link-heading" :href="`https://maps.google.com/?q=${address}`" target="_blank">{{ address }}</a>
             </p>
             <p class="uk-text-meta uk-margin-remove-top">Перед приездом к нам, заранее сообщите о своем визите.</p>
           </div>

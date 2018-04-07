@@ -28,10 +28,9 @@
         
         <div class="uk-margin">
           <div class="uk-form-controls">
-            <label><input class="uk-checkbox" name="agree" v-model="agree" type="checkbox" checked>&nbsp;Я <span class="uk-text-success" v-if="agree">согласен(на)</span><span class="uk-text-danger" v-else>не согласен(на)</span> с политикой <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C" target="_blank">конфиденциальности</a> сайта</label>
+            <label><input class="uk-checkbox" name="agree" v-model="agree" type="checkbox" tabindex="-1" checked>&nbsp;Я <span class="uk-text-success" v-if="agree">согласен(на)</span><span class="uk-text-danger" v-else>не согласен(на)</span> с политикой <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C" target="_blank" tabindex="-1">конфиденциальности</a> сайта</label>
           </div>
         </div>
-
 
         <div class="uk-margin">
           <div class="uk-form-controls">
@@ -45,7 +44,7 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex'
+  import UIkit from 'uikit'
 
   export default {
     data () {
@@ -57,9 +56,6 @@
 
         error: []
       }
-    },
-    computed: {
-      ...mapState([ ])
     },
     methods: {
       formFeedbackSubmit (e) {
@@ -103,7 +99,11 @@
               [e.target.agree.name]: e.target.agree.checked 
             }
           )
-        ) 
+        )
+
+        UIkit.modal.alert('Отлично! Ваш вопрос принят и будет рассмотрен в ближайшее время...')
+        
+        e.target.reset()
       },
       formFeedbackReset (e) {
         this.error = []
@@ -124,6 +124,6 @@
   }
 
   .error {
-    outline: solid 1px $alert-danger-color;
+    background-color: lighten($alert-danger-color, 10%) !important;
   } 
 </style>

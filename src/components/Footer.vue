@@ -1,11 +1,13 @@
 <template>
   <footer class="uk-section uk-section-secondary uk-padding-small">
-    <div class="uk-container">
-      <address class="uk-flex uk-flex-between uk-flex-middle uk-flex-wrap uk-text-small">
-        <div>{{ copyrightYear }} &copy; Project Company</div>
-        <div><span uk-icon="receiver"></span><a class="uk-link-reset" :href="`tel:${phoneNumber}`">{{ formatPhoneNumber(phoneNumber) }}</a></div> 
-      </address>
-    </div>
+    <address class="uk-grid-large uk-text-small" uk-grid><!-- uk-flex uk-flex-between uk-flex-middle uk-flex-wrap --> 
+      <div class="uk-width-expand@m">{{ copyrightYear }} &copy; Project Company</div>
+      <div class="uk-child-width-auto uk-grid-small uk-grid-divider uk-text-right@m" uk-grid>
+        <a class="uk-link-reset" :href="`https://maps.google.com/?q=${address}`" target="_blank">{{ address }}</a>
+        <a class="uk-link-reset" :href="`tel:${phoneNumber}`">{{ formatPhoneNumber(phoneNumber) }}</a>
+        <a class="uk-link-reset" :href="`mailto:${email}`">{{ email }}</a>
+      </div> 
+    </address>
   </footer>
 </template>
 
@@ -14,7 +16,7 @@
 
   export default {
     computed: {
-      ...mapState([ 'copyrightYear', 'phoneNumber', 'email' ])
+      ...mapState([ 'copyrightYear', 'address', 'phoneNumber', 'email' ])
     },
     methods: {
       formatPhoneNumber (phoneNumber) {

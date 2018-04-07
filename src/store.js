@@ -7,9 +7,9 @@ export default new Vuex.Store(
 	{
 	  state: {
 	  	copyrightYear: 2018,
-      address: '117485, Москва, Профсоюзная ул., 90',
-      phoneNumber: '+79067038001',
-      email: 'innokentypolyakov@gmail.com',
+      address: 'Профсоюзная ул., 90, Москва, 117485',
+      phoneNumber: '+79067000000',
+      email: 'projectcompany@gmail.com',
       skype: 'project.company'
 	  },
 	  mutations: {

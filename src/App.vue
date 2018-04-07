@@ -87,11 +87,12 @@
     position: fixed;
 
     left: calc(100vw / 2 - 26px);
-    bottom: 8px;
+    bottom: 36px;
 
     z-index: 1000;
-
     opacity: .75;
+
+    box-shadow: 0 0 6px rgba(0,0,0,0.5);
   }
 
   /*

@@ -50,6 +50,15 @@ var router = new Router(
 router.afterEach(
   (to, from) => {
     console.log(`${from.name} to ${to.name}`)
+
+    if (window.pageYOffset > 0) {
+      window.scrollTo(
+        {
+          'behavior': 'smooth',
+          'top': 0
+        }
+      )
+    }
   }
 )
 
