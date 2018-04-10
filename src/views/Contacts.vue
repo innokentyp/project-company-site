@@ -3,7 +3,7 @@
     <div class="uk-container">
       <h2>Контакты</h2>
 
-      <div class="uk-grid-match uk-grid-collapse uk-child-width-1-2@m" uk-grid>
+      <div class="uk-grid-match uk-grid-collapse" uk-grid>
         <div class="uk-width-1-3@m">
           <div class="uk-card uk-card-small uk-card-body uk-flex uk-flex-column uk-flex-center">
             <h3 class="uk-card-title uk-margin-remove-bottom">Адрес</h3>
@@ -65,7 +65,7 @@
     mounted () {
       this.$nextTick(
         () => {
-          setTimeout(() => { window.dispatchEvent(new CustomEvent('contactsMounted', {})) }, 10) 
+          setTimeout(() => { window.dispatchEvent(new CustomEvent('contactsMounted', {})) }, 60) 
         }
       )
     }

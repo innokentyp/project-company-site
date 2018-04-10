@@ -117,7 +117,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "node_modules/uikit/src/scss/variables.scss";
+  @import "node_modules/uikit/src/scss/variables-theme.scss";
 
   #form-feedback-message {
     resize: none;

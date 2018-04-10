@@ -2,8 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Home from './views/Home.vue'
-import Products from './views/Products.vue'
-import Solutions from './views/Solutions.vue'
+import Services from './views/Services.vue'
+import Portfolio from './views/Portfolio.vue'
 import Clients from './views/Clients.vue'
 import Support from './views/Support.vue'
 import Contacts from './views/Contacts.vue'
@@ -19,14 +19,14 @@ var router = new Router(
         component: Home
       },
       {
-        path: '/products',
-        name: 'products',
-        component: Products
+        path: '/services',
+        name: 'services',
+        component: Services
       },
       {
-        path: '/solutions',
-        name: 'solutions',
-        component: Solutions
+        path: '/portfolio',
+        name: 'portfolio',
+        component: Portfolio
       },
       {
         path: '/clients',

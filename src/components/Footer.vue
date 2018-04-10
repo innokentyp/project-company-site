@@ -1,7 +1,7 @@
 <template>
   <footer class="uk-section uk-section-secondary uk-padding-small">
     <address class="uk-grid-large uk-text-small" uk-grid><!-- uk-flex uk-flex-between uk-flex-middle uk-flex-wrap --> 
-      <div class="uk-width-expand@m">{{ copyrightYear }} &copy; Project Company</div>
+      <div class="uk-width-expand@m">{{ copyrightYear }} &copy; {{ name }}</div>
       <div class="uk-child-width-auto uk-grid-small uk-grid-divider uk-text-right@m" uk-grid>
         <a class="uk-link-reset" :href="`https://maps.google.com/?q=${address}`" target="_blank">{{ address }}</a>
         <a class="uk-link-reset" :href="`tel:${phoneNumber}`">{{ formatPhoneNumber(phoneNumber) }}</a>
@@ -16,7 +16,7 @@
 
   export default {
     computed: {
-      ...mapState([ 'copyrightYear', 'address', 'phoneNumber', 'email' ])
+      ...mapState([ 'name', 'copyrightYear', 'address', 'phoneNumber', 'email' ])
     },
     methods: {
       formatPhoneNumber (phoneNumber) {
@@ -27,9 +27,11 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "node_modules/uikit/src/scss/variables.scss";
+  @import "node_modules/uikit/src/scss/variables-theme.scss";
 
   .uk-link-reset {
+    transition: all .4s;
+
     &:hover {
       color: $global-link-color !important;
     }

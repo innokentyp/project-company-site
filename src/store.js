@@ -6,6 +6,8 @@ Vue.use(Vuex)
 export default new Vuex.Store(
 	{
 	  state: {
+	  	name: 'Project Company',
+
 	  	copyrightYear: 2018,
       address: 'Профсоюзная ул., 90, Москва, 117485',
       phoneNumber: '+79067000000',

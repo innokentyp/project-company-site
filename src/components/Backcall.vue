@@ -121,7 +121,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "node_modules/uikit/src/scss/variables.scss";
+  @import "node_modules/uikit/src/scss/variables-theme.scss";
 
   .error {
     background-color: lighten($alert-danger-color, 25%);

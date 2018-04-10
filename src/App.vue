@@ -72,17 +72,17 @@
   // $global-link-color: orange;
 
   // 2. Import default variables and available mixins.
-  @import "node_modules/uikit/src/scss/variables.scss";
-  @import "node_modules/uikit/src/scss/mixins.scss";
+  @import "node_modules/uikit/src/scss/variables-theme.scss";
+  @import "node_modules/uikit/src/scss/mixins-theme.scss";
 
   // 3. Your custom mixin overwrites.
   // @mixin hook-card() { color: lime; }
 
   // 4. Import UIkit.
-  @import "node_modules/uikit/src/scss/uikit.scss";
+  @import "node_modules/uikit/src/scss/uikit-theme.scss";
 
   // }
-
+  
   #js-scroll-up {
     position: fixed;
 
